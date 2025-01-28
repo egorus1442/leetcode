@@ -38,7 +38,7 @@ func (q *ArrayQueue) Dequeue() (int, error) {
 		return 0, errors.New("queue is empty")
 	}
 	value := q.head
-	q.head = (q.head - 1) % q.capacity
+	q.head = (q.head + 1) % q.capacity
 	q.size--
 	return value, nil
 }
